@@ -9,7 +9,7 @@ This repository contains my most recent personal data science projects
 
 ## Learn More about me
 
-You can learn more about my research and my publications at the following links:
+You can learn more about me at the following links
 
 1. [LinkedIn profile](https://www.linkedin.com/in/dakotarawlings/)
 2. [Google Scholar profile](https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=X_x46vUAAAAJ)
