@@ -3,9 +3,12 @@
 ## Overview
 
 This repository contains my most recent personal data science projects
-1. Trulia real estate web scraper and housing price estimator for houses sold in Santa Barbara over last two years (pandas, scikit-learn, beautiful soup, selenium, SQLite)
-2. Image classification for images of Santa Barbara native snakes using convolutional neural networks (TensorFlow, GCP, Google colab)
-3. Exploratory data analysis on USFS forest database (BigQuery, GCP, Google colab)
+#[1. Trulia real estate web scraper and housing price estimator] (https://github.com/dakotarawlings/dakota_data_science_projects/tree/main/santa_barbara_realestate_analysis)
+for houses sold in Santa Barbara over last two years (pandas, scikit-learn, beautiful soup, selenium, SQLite)
+#2. Snake image classification 
+for images of Santa Barbara native snakes using convolutional neural networks (TensorFlow, GCP, Google colab)
+#3. USFS forest data analysis
+Exploratory data analysis on USFS forest database (BigQuery, GCP, Google colab)
 
 ## Learn More about me
 
