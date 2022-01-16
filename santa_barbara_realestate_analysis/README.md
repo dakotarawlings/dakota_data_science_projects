@@ -8,7 +8,9 @@
 
 ## Resources
 **Python version:** 3.8
+
 **Packages:** sqlite3, pandas, numpy, sklearn, Catboost, LightGBM, seaborn, requests, beautifulsoup, flask, pickle
+
 **Flask api reference:** https://towardsdatascience.com/productionize-a-machine-learning-model-with-flask-and-heroku-8201260503d2
 
 ## Web Scraping
@@ -39,8 +41,6 @@ Used data visualization and basic summary statistics to analyze the distribution
 ## Model Development
 * I split the data into train and test sets (20% test) with the price as the target variable
 * Due to the sparse nature of the dataset, I tried to choose models that work well with sparse data including normalized regression such as lasso, and tree based models. I evaluated the performance of 7 different models including:
-* Used GridsearchCV to tune the hyperparameters of each model (when appropriate)
-* Evaluated the performance of each model using 3 fold cross validation
   - Linear regression 
   - Lasso regression 
   - Support vector regression
@@ -48,6 +48,8 @@ Used data visualization and basic summary statistics to analyze the distribution
   - XGBoost
   - LightGBM
   - Catboost
+* Used GridsearchCV to tune the hyperparameters of each model (when appropriate)
+* Evaluated the performance of each model using 3 fold cross validation
 * After comparing the MAE of each optimized model, the LightGBM model outperformed the other models 
 
 ## Model performance
