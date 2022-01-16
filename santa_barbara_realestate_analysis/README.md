@@ -37,6 +37,9 @@
 
 ## Exploritory Data Analysis
 Used data visualization and basic summary statistics to analyze the distribution of variables, correlation between variables, outliers, data range, and more
+
+<img src="wordcloud.png" width="100" height="200">
+
 ![wordcloud](wordcloud.png)
 
 ## Model Development
