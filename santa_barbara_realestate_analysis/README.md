@@ -33,3 +33,24 @@
 * Rescaled several variables to ensure that most features had similar scales
 * Normalized the distribution of several variables with skewed distributions
 
+## Exploritory Data Analysis
+Used data visualization and basic summary statistics to analyze the distribution of variables, correlation between variables, outliers, data range, and more
+
+## Model Development
+* I split the data into train and test sets (20% test) with the price as the target variable
+* Due to the sparse nature of the dataset, I tried to choose models that work well with sparse data including normalized regression such as lasso, and tree based models. I evaluated the performance of 7 different models including:
+* Used GridsearchCV to tune the hyperparameters of each model (when appropriate)
+* Evaluated the performance of each model using 3 fold cross validation
+  - Linear regression 
+  - Lasso regression 
+  - Support vector regression
+  - Random forest
+  - XGBoost
+  - LightGBM
+  - Catboost
+* After comparing the MAE of each optimized model, the LightGBM model outperformed the other models 
+
+## Model performance
+The LightGBM model achieved an MAE of $0.42 million (about 15% of the mean price)
+
+## Model Productionalization
