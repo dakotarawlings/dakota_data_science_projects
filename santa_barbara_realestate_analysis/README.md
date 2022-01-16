@@ -40,7 +40,9 @@ Used data visualization and basic summary statistics to analyze the distribution
 
 <img src="wordcloud.png" width="100" height="200">
 
-![wordcloud](wordcloud.png)
+<img src="/readme_pictures/heatmap.png" width="100" height="200">
+
+![wordcloud](wordcloud.png)  ![wordcloud](/readme_pictures/heatmap.png)
 
 ## Model Development
 * I split the data into train and test sets (20% test) with the price as the target variable
