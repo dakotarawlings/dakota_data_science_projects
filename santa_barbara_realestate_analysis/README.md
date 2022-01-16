@@ -37,6 +37,7 @@
 
 ## Exploritory Data Analysis
 Used data visualization and basic summary statistics to analyze the distribution of variables, correlation between variables, outliers, data range, and more
+![wordcloud](wordcloud.png)
 
 ## Model Development
 * I split the data into train and test sets (20% test) with the price as the target variable
