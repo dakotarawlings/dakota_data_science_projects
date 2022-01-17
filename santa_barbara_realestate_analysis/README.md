@@ -38,16 +38,17 @@
 ## Exploritory Data Analysis
 Used data visualization and basic summary statistics to analyze the distribution of variables, correlation between variables, outliers, data range, and more
 
-<img src="/readme_pictures/heatmap.png" width="100" height="200">
+<img src="readme_pictures/price_distribution.png" width="500">
 
 <p float="left">
-  <img src="readme_pictures/heatmap.png" width="100" />
-  <img src="readme_pictures/heatmap.png" width="100" /> 
-  <img src="readme_pictures/heatmap.png" width="100" />
+  <img src="readme_pictures/heatmap.png" width="350" />
+  <img src="readme_pictures/boxplots.png" width="350" /> 
+  <img src="readme_pictures/wordcloud.png" width="150" />
 </p>
 
+<img src="readme_pictures/boxplot2.png" width="1000">
+
 ## Model Development
-<img src="/readme_pictures/model_performance.png" width="300">
 * I split the data into train and test sets (20% test) with the price as the target variable
 * Due to the sparse nature of the dataset, I tried to choose models that work well with sparse data including normalized regression such as lasso, and tree based models. I evaluated the performance of 7 different models including:
   - Linear regression 
@@ -60,6 +61,8 @@ Used data visualization and basic summary statistics to analyze the distribution
 * Used GridsearchCV to tune the hyperparameters of each model (when appropriate)
 * Evaluated the performance of each model using 3 fold cross validation
 * After comparing the MAE of each optimized model, the LightGBM model outperformed the other models 
+
+<img src="readme_pictures/model_performance.png" width="400">
 
 ## Model performance
 The LightGBM model achieved an MAE of $0.42 million (about 15% of the mean price)
