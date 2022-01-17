@@ -38,12 +38,12 @@
 ## Exploritory Data Analysis
 Used data visualization and basic summary statistics to analyze the distribution of variables, correlation between variables, outliers, data range, and more
 
-<img src="readme_pictures/price_distribution.png" width="500">
+<img src="readme_pictures/price_distribution.png" height="400">
 
 <p float="left">
-  <img src="readme_pictures/heatmap.png" width="350" />
-  <img src="readme_pictures/boxplots.png" width="350" /> 
-  <img src="readme_pictures/wordcloud.png" width="150" />
+  <img src="readme_pictures/heatmap.png" height="300" />
+  <img src="readme_pictures/boxplots.png" height="300" /> 
+  <img src="readme_pictures/wordcloud.png" height="300" />
 </p>
 
 <img src="readme_pictures/boxplot2.png" width="1000">
