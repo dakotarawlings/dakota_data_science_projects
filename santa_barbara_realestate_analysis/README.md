@@ -46,7 +46,7 @@ Used data visualization and basic summary statistics to analyze the distribution
   <img src="readme_pictures/wordcloud.png" height="300" />
 </p>
 
-<img src="readme_pictures/boxplot2.png" width="1000">
+<img src="readme_pictures/boxplot2.png" width="900">
 
 ## Model Development
 * I split the data into train and test sets (20% test) with the price as the target variable
