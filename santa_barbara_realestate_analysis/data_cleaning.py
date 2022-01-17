@@ -15,10 +15,11 @@ from mlxtend.preprocessing import minmax_scaling
 
 
 #Call trulia web scraper to scrape data from trulia link and save to SQLite .db file
+#This takes ~1-1.5 minutes per listing
 '''
 import trulia_web_scraper as tws
 base_link="http://www.trulia.com/sold/Santa_Barbara,CA/SINGLE-FAMILY_HOME_type/"
-num_pages=1
+num_pages=30
 
 df=tws.web_scraper(base_link,num_pages)
 
@@ -46,6 +47,14 @@ print("number of samples: "+str(len(houses_dataframe)))
 
 houses_dataframe['house_age']=houses_dataframe['year_built'].apply(lambda x: 2022-x)
 
+#rescale price to millions
+
+houses_dataframe['price']=houses_dataframe['price'].apply(lambda x: x/(1e6))
+
+#rescale sqft to thousands of sqft
+
+houses_dataframe['building_sqft']=houses_dataframe['building_sqft'].apply(lambda x: x/(1000))
+
 #Extract garage boolean from description
 
 houses_dataframe['has_garage']=houses_dataframe['home_description'].apply(lambda x: 1 if 'garage' in x.lower() else 0)
@@ -70,19 +79,33 @@ houses_dataframe['has_hope_ranch']=houses_dataframe['home_description'].apply(la
 
 houses_dataframe['has_montecito']=houses_dataframe['home_description'].apply(lambda x: 1 if 'montecito' in x.lower() else 0)
 
+# Extract pool boolean from description
+
+houses_dataframe['has_pool']=houses_dataframe['home_description'].apply(lambda x: 1 if 'pool' in x.lower() else 0)
+
+# Extract upstair boolean from description
+
+houses_dataframe['has_upstairs']=houses_dataframe['home_description'].apply(lambda x: 1 if ('upstair' in x.lower() or 'upstairs' in x.lower()) else 0)
+
+#drop rows with missing values for price, num_baths, lot area, and year built
+
+houses_dataframe['has_IV']=houses_dataframe['home_description'].apply(lambda x: 1 if 'isla vista' in x.lower() else 0)
+
 #drop rows with missing values for price, num_baths, lot area, and year built
 
 houses_dataframe.dropna(subset=['price','num_baths','lot_area','year_built'],inplace=True)
 
 #drop rows with outlying prices (above 10 million)
 
-houses_dataframe=houses_dataframe[houses_dataframe['price']<1e7]
+houses_dataframe=houses_dataframe[houses_dataframe['price']<10]
 
-#drop rows with outlying land area (below 1k acres)
+#houses_dataframe=houses_dataframe[houses_dataframe['price']>0.9]
 
-houses_dataframe=houses_dataframe[houses_dataframe['lot_area']<1000]
+#drop rows with outlying land area (below 20 acres)
 
-#indicate if building sqft is missing 
+houses_dataframe=houses_dataframe[houses_dataframe['lot_area']<20]
+
+#indicate if building sqft is missing for future imputation
 
 houses_dataframe['building_sqft'+'_was_missing']=houses_dataframe['building_sqft'].isnull()
 
@@ -99,4 +122,3 @@ print("number of samples: "+str(len(houses_dataframe)))
 #Store cleaned data in new table is SQLite database
 houses_dataframe.to_sql(name='trulia_house_SB_data_cleaned',con=conn,schema='trulia_sb_house_data.db',if_exists='replace') 
 
-houses_dataframe_cleaned = pd.read_sql_query("SELECT * FROM trulia_house_SB_data_cleaned", conn)
