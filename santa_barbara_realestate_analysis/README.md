@@ -42,9 +42,18 @@ Used data visualization and basic summary statistics to analyze the distribution
 
 <img src="/readme_pictures/heatmap.png" width="100" height="200">
 
-![wordcloud](wordcloud.png)  ![wordcloud](/readme_pictures/heatmap.png)
+![wordcloud](wordcloud.png)  
+
+![wordcloud](readme_pictures/heatmap.png)
+
+<p float="left">
+  <img src="readme_pictures/heatmap.png" width="100" />
+  <img src="readme_pictures/heatmap.png" width="100" /> 
+  <img src="readme_pictures/heatmap.png" width="100" />
+</p>
 
 ## Model Development
+<img src="/readme_pictures/heatmap.png" width="100">
 * I split the data into train and test sets (20% test) with the price as the target variable
 * Due to the sparse nature of the dataset, I tried to choose models that work well with sparse data including normalized regression such as lasso, and tree based models. I evaluated the performance of 7 different models including:
   - Linear regression 
