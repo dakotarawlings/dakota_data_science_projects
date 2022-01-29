@@ -16,7 +16,7 @@
 
 **Packages:** sqlite3, pandas, numpy, sklearn, Catboost, LightGBM, seaborn, requests, beautifulsoup, flask, pickle
 
-**Flask api reference:** https://towardsdatascience.com/productionize-a-machine-learning-model-with-flask-and-heroku-8201260503d2
+**Flask api reference:** https://medium.com/codex/build-a-full-stack-spam-catching-app-2c235347932d
 
 ## Web Scraping
 * Built a web scraper from scratch using python and beautiful soup to scrape data for ~1500 sinlge family homes that have been sold in the past 2 years off of trulia.com
@@ -81,6 +81,11 @@ Used data visualization and basic summary statistics to analyze the distribution
 The LightGBM model achieved an MAE of $0.42 million (about 15% of the mean price)
 
 ## Model Productionalization
+
+<p align="center">
+  <img src="readme_pictures/homepage2.png" width="600" >
+</p>
+
 * Created flask API endpoint to make house price estimate based on input features
 * Wrote a full stack web application in HTML, CSS, and JavaScript which takes in user input, calls the flask API, and desplays the predicted price
 * Hosted the web application on Heroku
