@@ -1,5 +1,5 @@
 # Santa Barbara Real Estate Price Estimator
-
+<img src="readme_pictures/homepage.png" width="400">
 ## Overview
 * Built a web scraper from scratch to scrape data from ~1500 sinlge family homes that have been sold over the past 2 years in Santa Barbara from trulia.com and created SQLite database
 * Engineered features from house description to quantify the value of certain house attributes such as "ocean views", "pool", "fireplace", etc. 
