@@ -7,13 +7,14 @@ This repository contains my most recent personal data science projects. Here I a
 ## [1. Trulia real estate web scraper and housing price estimator](/santa_barbara_realestate_analysis)
 
 <p align="center">
-  <img src="santa_barbara_realestate_analysis/readme_pictures/homepage.png" width="500" >
+  <img src="santa_barbara_realestate_analysis/readme_pictures/homepage2.png" width="500" >
 </p>
 
 * Built a web scraper from scratch to scrape data from ~1500 realestate sales over the past 4 years in Santa Barbara from trulia.com and created associated SQLite database
 * Engineered features from house description to quantify the value of certain house attributes such as "ocean views", "pool", "fireplace", etc. 
 * Optimized hyper parameters for linear, lasso, random forest, LightGBM, Catboost, and XGboost
-* Built a flask API for estimating a house price based on features and hosted API on Heroku
+* Built a flask API endpoint for estimating a house price based on features
+* Wrote a web application in HTML, CSS, and JavaScript to display price prediction based on user input and hosted on Heroku
 ## 2. Snake image classification 
 * Scraped ~2000 images of native snakes in Santa Barbara from Bing.com
 * Built and trained a CNN using Keras and TensorFlow to identify snake species based on images with 80% accuracy
