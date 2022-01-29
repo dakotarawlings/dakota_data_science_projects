@@ -2,7 +2,6 @@
 import flask
 from flask import Flask, jsonify, request
 import json
-import data_input
 import numpy as np
 import pickle
 
