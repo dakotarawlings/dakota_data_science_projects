@@ -4,7 +4,7 @@
 
 This repository contains my most recent personal data science projects. Here I am showcasing a few projects that show a variety of different skills including model productionalization, incorporation of models into full stack web apps, web scraping, data cleaning, feature engineering, visualization, shallow model implementation, hyper parameter tuning, model interpretation, neural network implementation, image classification, and more. 
 
-## [1. Trulia real estate web scraper and housing price estimator](/santa_barbara_realestate_analysis)
+## [1. Housing price estimator web application](/santa_barbara_realestate_analysis)
 
 <p align="center">
   <img src="santa_barbara_realestate_analysis/readme_pictures/homepage2.png" width="500" >
