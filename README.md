@@ -5,6 +5,11 @@
 This repository contains my most recent personal data science projects. Here I am showcasing a few projects that show a variety of different skills including model productionalization, incorporation of models into full stack web apps, web scraping, data cleaning, feature engineering, visualization, shallow model implementation, hyper parameter tuning, model interpretation, neural network implementation, image classification, and more. 
 
 ## [1. Trulia real estate web scraper and housing price estimator](/santa_barbara_realestate_analysis)
+
+<p align="center">
+  <img src="santa_barbara_realestate_analysis/readme_pictures/homepage.png" width="500" >
+</p>
+
 * Built a web scraper from scratch to scrape data from ~1500 realestate sales over the past 4 years in Santa Barbara from trulia.com and created associated SQLite database
 * Engineered features from house description to quantify the value of certain house attributes such as "ocean views", "pool", "fireplace", etc. 
 * Optimized hyper parameters for linear, lasso, random forest, LightGBM, Catboost, and XGboost
