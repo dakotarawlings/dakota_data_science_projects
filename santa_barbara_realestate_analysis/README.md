@@ -1,10 +1,15 @@
 # Santa Barbara Real Estate Price Estimator
-<img src="readme_pictures/homepage.png" width="400">
+
+<p align="center">
+  <img src="readme_pictures/homepage.png" width="600" >
+</p>
+
 ## Overview
 * Built a web scraper from scratch to scrape data from ~1500 sinlge family homes that have been sold over the past 2 years in Santa Barbara from trulia.com and created SQLite database
 * Engineered features from house description to quantify the value of certain house attributes such as "ocean views", "pool", "fireplace", etc. 
 * Optimized hyper parameters for linear, lasso, random forest, LightGBM, Catboost, and XGboost
-* Built a flask API for estimating a house price based on features and hosted API on Heroku
+* Built a flask API endpoint for estimating a house price based on features
+* Wrote a web application in HTML, CSS, and JavaScript to display price prediction based on user input and hosted on Heroku
 
 ## Resources
 **Python version:** 3.8
@@ -38,7 +43,10 @@
 ## Exploritory Data Analysis
 Used data visualization and basic summary statistics to analyze the distribution of variables, correlation between variables, outliers, data range, and more
 
-<img src="readme_pictures/price_distribution.png" height="400">
+
+<p align="center">
+  <img src="readme_pictures/price_distribution.png" width="400" >
+</p>
 
 <p float="left">
   <img src="readme_pictures/heatmap.png" height="300" />
@@ -46,8 +54,11 @@ Used data visualization and basic summary statistics to analyze the distribution
   <img src="readme_pictures/wordcloud.png" height="300" />
 </p>
 
+<p align="center">
 <img src="readme_pictures/boxplot2.png" width="900">
-
+</p>
+  
+  
 ## Model Development
 * I split the data into train and test sets (20% test) with the price as the target variable
 * Due to the sparse nature of the dataset, I tried to choose models that work well with sparse data including normalized regression such as lasso, and tree based models. I evaluated the performance of 7 different models including:
@@ -62,9 +73,15 @@ Used data visualization and basic summary statistics to analyze the distribution
 * Evaluated the performance of each model using 3 fold cross validation
 * After comparing the MAE of each optimized model, the LightGBM model outperformed the other models 
 
+
 <img src="readme_pictures/model_performance.png" width="400">
 
+  
 ## Model performance
 The LightGBM model achieved an MAE of $0.42 million (about 15% of the mean price)
 
 ## Model Productionalization
+* Created flask API endpoint to make house price estimate based on input features
+* Wrote a full stack web application in HTML, CSS, and JavaScript which takes in user input, calls the flask API, and desplays the predicted price
+* Hosted the web application on Heroku
+
