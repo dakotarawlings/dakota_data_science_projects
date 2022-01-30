@@ -4,19 +4,21 @@
   <img src="readme_pictures/homepage.png" width="600" >
 </p>
 
+### Web App Link: https://sb-house-price-estimator.herokuapp.com/
+
 ## Overview
 * Built a web scraper from scratch to scrape data from ~1500 sinlge family homes that have been sold over the past 2 years in Santa Barbara from trulia.com and created SQLite database
 * Engineered features from house description to quantify the value of certain house attributes such as "ocean views", "pool", "fireplace", etc. 
 * Optimized hyper parameters for linear, lasso, random forest, LightGBM, Catboost, and XGboost
 * Built a flask API endpoint for estimating a house price based on features
-* Wrote a web application in HTML, CSS, and JavaScript to display price prediction based on user input and hosted on Heroku
+* Wrote a web application in HTML, CSS, and JavaScript to display price prediction based on user input and hosted on Heroku: https://sb-house-price-estimator.herokuapp.com/
 
 ## Resources
 **Python version:** 3.8
 
 **Packages:** sqlite3, pandas, numpy, sklearn, Catboost, LightGBM, seaborn, requests, beautifulsoup, flask, pickle
 
-**Flask api reference:** https://medium.com/codex/build-a-full-stack-spam-catching-app-2c235347932d
+**Languages:** python SQLite, JavaScript, HTML, CSS
 
 ## Web Scraping
 * Built a web scraper from scratch using python and beautiful soup to scrape data for ~1500 sinlge family homes that have been sold in the past 2 years off of trulia.com
@@ -48,7 +50,7 @@ Used data visualization and basic summary statistics to analyze the distribution
   <img src="readme_pictures/price_distribution.png" width="400" >
 </p>
 
-<p float="left">
+<p float="left" align="center">
   <img src="readme_pictures/heatmap.png" height="300" />
   <img src="readme_pictures/boxplots.png" height="300" /> 
   <img src="readme_pictures/wordcloud.png" height="300" />
@@ -88,5 +90,5 @@ The LightGBM model achieved an MAE of $0.42 million (about 15% of the mean price
 
 * Created flask API endpoint to make house price estimate based on input features
 * Wrote a full stack web application in HTML, CSS, and JavaScript which takes in user input, calls the flask API, and desplays the predicted price
-* Hosted the web application on Heroku
+* Hosted the web application on Heroku: https://sb-house-price-estimator.herokuapp.com/
 
