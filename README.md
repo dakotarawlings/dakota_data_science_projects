@@ -17,7 +17,7 @@ This repository contains my most recent personal data science projects. Here I a
 * Engineered features from house description to quantify the value of certain house attributes such as "ocean views", "pool", "fireplace", etc. 
 * Optimized hyper parameters for linear, lasso, random forest, LightGBM, Catboost, and XGboost
 * Built a flask API endpoint for estimating a house price based on features
-* Wrote a web application in HTML, CSS, and JavaScript to call API, display price prediction based on user input
+* Wrote a web application in HTML, CSS, and JavaScript to call API and display price prediction based on user input
 * Deployed web app on Heroku: https://sb-house-price-estimator.herokuapp.com/
 ## 2. Snake image classification 
 * Scraped ~2000 images of native snakes in Santa Barbara from Bing.com
