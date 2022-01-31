@@ -7,7 +7,7 @@
 ### Web App Link: https://sb-house-price-estimator.herokuapp.com/
 
 ## Overview
-* Built a web scraper from scratch to scrape data from ~1500 sinlge family homes that have been sold over the past 2 years in Santa Barbara from trulia.com and created SQLite database
+* Built a web scraper from scratch to scrape data from ~1500 single family homes that have been sold over the past 2 years in Santa Barbara from trulia.com and created SQLite database
 * Engineered features from house description to quantify the value of certain house attributes such as "ocean views", "pool", "fireplace", etc. 
 * Optimized hyper parameters for linear, lasso, random forest, LightGBM, Catboost, and XGboost
 * Built a flask API endpoint for estimating a house price based on features
@@ -21,7 +21,7 @@
 **Languages:** python SQLite, JavaScript, HTML, CSS
 
 ## Web Scraping
-* Built a web scraper from scratch using python and beautiful soup to scrape data for ~1500 sinlge family homes that have been sold in the past 2 years off of trulia.com
+* Built a web scraper from scratch using python and beautiful soup to scrape data for ~1500 single family homes that have been sold in the past 2 years off of trulia.com
 * Extracted features from each listing such as:
   - Closing price
   - Year built
@@ -42,7 +42,7 @@
 * Rescaled several variables to ensure that most features had similar scales
 * Normalized the distribution of several variables with skewed distributions
 
-## Exploritory Data Analysis
+## Exploratory Data Analysis
 Used data visualization and basic summary statistics to analyze the distribution of variables, correlation between variables, outliers, data range, and more
 
 
@@ -89,6 +89,6 @@ The LightGBM model achieved an MAE of $0.42 million (about 15% of the mean price
 </p>
 
 * Created flask API endpoint to make house price estimate based on input features
-* Wrote a full stack web application in HTML, CSS, and JavaScript which takes in user input, calls the flask API, and desplays the predicted price
+* Wrote a full stack web application in HTML, CSS, and JavaScript which takes in user input, calls the flask API, and displays the predicted price
 * Hosted the web application on Heroku: https://sb-house-price-estimator.herokuapp.com/
 
