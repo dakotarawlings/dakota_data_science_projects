@@ -92,3 +92,8 @@ The LightGBM model achieved an MAE of $0.42 million (about 15% of the mean price
 * Wrote a full stack web application in HTML, CSS, and JavaScript which takes in user input, calls the flask API, and displays the predicted price
 * Hosted the web application on Heroku: https://sb-house-price-estimator.herokuapp.com/
 
+## Fture work
+* This dataset was relatively limited in terms of sample size and number of features
+  -Add more features to the dataset
+  -Increase the sample size (scrape data from more house listings)
+* Improve the error handling in the web app
