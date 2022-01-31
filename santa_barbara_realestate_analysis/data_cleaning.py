@@ -29,7 +29,7 @@ df.to_sql(name='trulia_house_summary_data',con=conn,schema='raw_trulia_data.db',
 
 #Query raw trulia house data from SQLite database
 
-conn = sqlite3.connect('C:/Users/dakot/Desktop/DataScience/Project Scrap work/trulia_project/trulia_sb_house_data.db')
+conn = sqlite3.connect('C:/Users/dakot/Desktop/DataScience/projects/dakota_portfolio/santa_barbara_realestate_analysis/trulia_sb_house_data.db')
 
 houses_dataframe = pd.read_sql_query("SELECT * FROM trulia_house_SB_raw_data", conn)
 

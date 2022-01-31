@@ -110,7 +110,7 @@ def extract_link_data(link_list):
             data=s.get(link,headers=req_headers)
             soup=BeautifulSoup(data.content,'html.parser')
             
-            #Uncomment to save HTML data to directory in case program stops 
+            #Uncomment to save HTML data to directory to save progress in case program stops 
             #do to a "captcha" bot on the site
             '''
             with open("C:/Users/dakot/Desktop/DataScience/Project Scrap work/trulia_project/raw_page_html/"+str(i)+".html", "w") as f:
