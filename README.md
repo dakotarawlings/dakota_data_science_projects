@@ -13,7 +13,9 @@ This repository contains my most recent personal data science projects. Here I a
   </br>
 </p>
 
-* Built a web scraper from scratch to scrape data from ~1500 realestate sales over the past 4 years in Santa Barbara from trulia.com and created associated SQLite database
+* Built a web scraper from scratch to scrape data from ~1500 realestate sales over the past 4 years in Santa Barbara from trulia.com
+* Created an associated SQLite database
+* Implemented various feature engineering and cleaning strategies such as scaling, normalization, transformation, one hot encoding, KNN imputation, etc
 * Engineered features from house description to quantify the value of certain house attributes such as "ocean views", "pool", "fireplace", etc. 
 * Optimized hyper parameters for linear, lasso, random forest, LightGBM, Catboost, and XGboost
 * Built a flask API endpoint for estimating a house price based on features
