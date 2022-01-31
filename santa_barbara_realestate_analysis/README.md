@@ -7,8 +7,10 @@
 ### Web App Link: https://sb-house-price-estimator.herokuapp.com/
 
 ## Overview
-* Built a web scraper from scratch to scrape data from ~1500 single family homes that have been sold over the past 2 years in Santa Barbara from trulia.com and created SQLite database
-* Engineered features from house description to quantify the value of certain house attributes such as "ocean views", "pool", "fireplace", etc. 
+* Built a web scraper from scratch to scrape data from ~1500 single family homes that have been sold over the past 2 years in Santa Barbara from trulia.com
+* Created SQLite database 
+* Engineered features from the written house description to quantify the value of certain house attributes such as "ocean views", "pool", "fireplace", etc. 
+* Implemented various feature engineering strategies such as scaling, normalization, transformation, one hot encoding, KNN imputation, etc
 * Optimized hyper parameters for linear, lasso, random forest, LightGBM, Catboost, and XGboost
 * Built a flask API endpoint for estimating a house price based on features
 * Wrote a web application in HTML, CSS, and JavaScript to display price prediction based on user input and hosted on Heroku: https://sb-house-price-estimator.herokuapp.com/
@@ -18,7 +20,7 @@
 
 **Packages:** sqlite3, pandas, numpy, sklearn, Catboost, LightGBM, seaborn, requests, beautifulsoup, flask, pickle
 
-**Languages:** python SQLite, JavaScript, HTML, CSS
+**Languages:** python, SQLite, JavaScript, HTML, CSS
 
 ## Web Scraping
 * Built a web scraper from scratch using python and beautiful soup to scrape data for ~1500 single family homes that have been sold in the past 2 years off of trulia.com
@@ -39,11 +41,11 @@
 * Extracted the zipcode from the address as a categorical variable
 * Used one hot encoding to create dummy variables for categorical variables such as the zipcode
 * Used a KNN regressor to impute missing values 
-* Rescaled several variables to ensure that most features had similar scales
+* Rescaled several variables to ensure that most features were on a similar scale
 * Normalized the distribution of several variables with skewed distributions
 
 ## Exploratory Data Analysis
-Used data visualization and basic summary statistics to analyze the distribution of variables, correlation between variables, outliers, data range, and more
+Used data visualization and basic summary statistics to analyze the distribution of variables, correlation between variables, outliers, data range, etc.
 
 
 <p align="center">
@@ -88,12 +90,13 @@ The LightGBM model achieved an MAE of $0.42 million (about 15% of the mean price
   <img src="readme_pictures/homepage2.png" width="600" >
 </p>
 
-* Created flask API endpoint to make house price estimate based on input features
+* Created flask API endpoint to estimate a price based on input features
 * Wrote a full stack web application in HTML, CSS, and JavaScript which takes in user input, calls the flask API, and displays the predicted price
 * Hosted the web application on Heroku: https://sb-house-price-estimator.herokuapp.com/
 
 ## Fture work
-* This dataset was relatively limited in terms of sample size and number of features
-  -Add more features to the dataset
-  -Increase the sample size (scrape data from more house listings)
-* Improve the error handling in the web app
+* This dataset was relatively limited in terms of sample size and number of features:
+  - Add more features to the dataset via further feature engineering and web scraping
+  - Increase the sample size (scrape data from more house listings)
+* Further optimization of data cleaning and hyperparameter tuning is needed
+* Improved error handling in the web app
