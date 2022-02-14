@@ -65,6 +65,9 @@ The model with the pretrained MobileNetV2 base achieved an accuracy of 95%
 
 ## Future Work
 
+* This model was trained on a relatively small dataset (200-300 images per class). Increasing the size of the dataset would improve the accuracy
+* Fine tune the model by allowing training for the top layers of the pretrained MobileNetV2 base
+* Here I only used 10 tool classes, however the model would certainly be more useful if it was trained with more classes
 * Improve the file upload security with server side validation of the filetype (currently I only verify the filetype using the javascrit file)
 * Improve the error and exception handling in the application
 * Improve the formatting and GUI for mobile and mac browsers
