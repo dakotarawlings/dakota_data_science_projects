@@ -1,0 +1,61 @@
+# Tool Image Classifier
+
+<p align="center">
+  <img src="/tool_image_classification/readme_images/homepage1.png" width="500" >
+</p>
+
+### Web App Link: https://tool-image-classifier.herokuapp.com/
+
+## Motivation
+* There are many different tools. Tools often have technical names or similar sounding names that are difficult to remember (e.g. lug wrench vs. socket wrench vs. allen wrench vs box wrench etc.)
+* Many tools require a knowledge of the associated accessories/hardware that go along with the tool (e.g. what type of blades are compatible with a certain power saw)
+* A casual "DIYer" might not remember the names of all of their tools, making it difficult to order associated hardware and to know what each tool is for
+* This app could eventually serve to help someone identify what a tool is, what the tool does, and potentially the app could generate revenue by directing the user to order replacement parts/hardware for the tool online
+
+
+## Project Overview
+
+* Built a web scraper that implements the Bing image search API to scrape ~4000 images of 10 different tool classes
+* Implemented cleaning and preprocessing techniques such as image augmentation, image rescaling, and image reformatting
+* Compared the performance of two different CNN models, one with a custom convolutional base and head and a second that utilizes trasfer learning with the MobileNetV2 pretrained base. The latter model achieved an accuracy of 95%
+* Built a flask API endpoint that receives an image from a post request, implements the model, and returns a predicted image class and a probability 
+* Wrote a web application in HTML, CSS, and JavaScript to call API and display the class prediction
+* Deployed web app on Heroku: https://tool-image-classifier.herokuapp.com/
+
+## Resources
+**Python version:** 3.8
+
+**Packages:** Tensorflow, keras, Pillow, numpy, sklearn, seaborn, requests, flask
+
+**Languages:** python, SQLite, JavaScript, HTML, CSS
+
+## Web Scraping and Data Analysis
+* Wrote a script to implement the Bing image search API to scrape a total of ~4000 images from the web for 10 different tool classes
+
+## Model Development
+* Split the data into train and test sets (20% test) with the price as the target variable
+* Tested the performance of two models; one with a pretrained base (MobileNetV2) and one with a custom base and head
+  
+  <p align="center">
+  <img src="readme_images/confusionMatrix.png" width="400" >
+  </p>
+## Model Performance
+
+The model with the pretrained MobileNetV2 base achieved an accuracy of 95%
+
+## Model Productionalization
+
+<p align="center">
+  <img src="readme_images/homepage2.png" width="400" >
+</p>
+
+* Created flask API endpoint to estimate a price based on input features
+* Wrote a full stack web application in HTML, CSS, and JavaScript which takes in user input, calls the flask API, and displays the predicted tool class
+* Hosted the web application on Heroku: https://sb-house-price-estimator.herokuapp.com/
+
+## Future Work
+
+* Improve the file upload security with server side validation of the filetype (currently I only verify the filetype using the javascrit file)
+* Improve the error and exception handling in the application
+* Improve the formatting and GUI for mobile and mac browsers
+* Update the GUI to include information about the tool, show the associated hardware/parts for the tool, and potentially direct the user to a link to buy replacementparts/accessories
