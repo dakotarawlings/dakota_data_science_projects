@@ -19,7 +19,7 @@
 * Implemented cleaning and preprocessing techniques such as image augmentation, image rescaling, and image reformatting
 * Compared the performance of two different CNN models, one with a custom convolutional base and head and a second that utilizes trasfer learning with the MobileNetV2 pretrained base. The latter model achieved an accuracy of 95%
 * Built a flask API endpoint that receives an image from a post request, implements the model, and returns a predicted image class and a probability 
-* Wrote a web application in HTML, CSS, and JavaScript to call API and display the class prediction
+* Wrote a web application from scratch in HTML, CSS, and JavaScript to call API and display the class prediction
 * Deployed web app on Heroku: https://tool-image-classifier.herokuapp.com/
 
 ## Resources
@@ -60,7 +60,7 @@ The model with the pretrained MobileNetV2 base achieved an accuracy of 95%
 </p>
 
 * Created flask API endpoint to estimate a price based on input features
-* Wrote a full stack web application in HTML, CSS, and JavaScript which takes in user input, calls the flask API, and displays the predicted tool class
+* Wrote a full stack web application from scratch in HTML, CSS, and JavaScript which takes in user input, calls the flask API, and displays the predicted tool class
 * Hosted the web application on Heroku: https://sb-house-price-estimator.herokuapp.com/
 
 ## Future Work
