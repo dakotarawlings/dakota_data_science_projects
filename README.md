@@ -8,7 +8,7 @@ This repository contains my most recent personal data science projects. Here I a
 ## [1. Tool image classifier web application](/tool_image_classification)
 
 <p align="center">
-  <img src="/tool_image_classification/readme_images/homepage2.png" width="500" >
+  <img src="/tool_image_classification/readme_images/homepage3.png" width="500" >
   <br>
   <em>Web App Link: https://tool-image-classifier.herokuapp.com/</em>
   </br>
