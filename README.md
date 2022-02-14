@@ -7,9 +7,11 @@ This repository contains my most recent personal data science projects. Here I a
 
 ## [1. Tool image classifier web application](/tool_image_classification)
 
-<p align="center">
-  <img src="/tool_image_classification/readme_images/homepage3.png" width="500" >
+<p float ="left" align="center">
+  <img style="padding-right: 100px;" src="/tool_image_classification/readme_images/homepage3.png" height="300" >
+  <img style="padding-left: 100px;" src="/tool_image_classification/readme_images/iphone.gif" height="300" >
   <br>
+  <em>Left: Desktop browser. Right: Iphone browser. </em>
   <em>Web App Link: https://tool-image-classifier.herokuapp.com/</em>
   </br>
 </p>
@@ -25,7 +27,7 @@ This repository contains my most recent personal data science projects. Here I a
 ## [2. Housing price estimator web application](/santa_barbara_realestate_analysis)
 
 <p align="center">
-  <img src="santa_barbara_realestate_analysis/readme_pictures/homepage2.png" width="500" >
+  <img src="santa_barbara_realestate_analysis/readme_pictures/homepage2.png" height="300" >
   <br>
   <em>Web App Link: https://sb-house-price-estimator.herokuapp.com/</em>
   </br>
