@@ -1,7 +1,11 @@
 # Tool Image Classifier
 
-<p align="center">
-  <img src="/tool_image_classification/readme_images/homepage1.png" width="500" >
+<p float ="left" align="center">
+  <img style="padding-right: 100px;" src="/tool_image_classification/readme_images/homepage1.png" height="300" >
+  <img style="padding-left: 100px;" src="/tool_image_classification/readme_images/iphone.gif" height="300" >
+  <br>
+  <em>Left: Desktop browser. Right: Iphone browser. </em>
+  </br>
 </p>
 
 ### Web App Link: https://tool-image-classifier.herokuapp.com/
@@ -15,10 +19,10 @@
 
 ## Project Overview
 
-* Built a web scraper that implements the Bing image search API to scrape ~4000 images of 10 different tool classes
-* Implemented cleaning and preprocessing techniques such as image augmentation, image rescaling, and image reformatting
-* Compared the performance of two different CNN models, one with a custom convolutional base and head and a second that utilizes trasfer learning with the MobileNetV2 pretrained base. The latter model achieved an accuracy of 95%
-* Built a flask API endpoint that receives an image from a post request, implements the model, and returns a predicted image class and a probability 
+* Built a web scraper in python that implements the Bing image search API to scrape ~4000 images of 10 different tool classes
+* Implemented cleaning and preprocessing techniques such as image augmentation, image rescaling, and image reformatting using keras and pillow
+* Built and evaluated two different CNN image recognition models using Tensorflow and keras, one with a custom convolutional base and head and a second that implements trasfer learning with the MobileNetV2 pretrained base (achieved an accuracy of 95%)
+* Built a flask API endpoint that recieves an image from a post request, implements the model, and returns an image class and a probability 
 * Wrote a web application from scratch in HTML, CSS, and JavaScript to call API and display the class prediction
 * Deployed web app on Heroku: https://tool-image-classifier.herokuapp.com/
 
