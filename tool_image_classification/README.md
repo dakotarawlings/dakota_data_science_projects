@@ -7,7 +7,7 @@
 ### Web App Link: https://tool-image-classifier.herokuapp.com/
 
 ## Motivation
-* There are many different tools. Tools often have technical names or similar sounding names that are difficult to remember (e.g. lug wrench vs. socket wrench vs. allen wrench vs box wrench etc.)
+* Tools often have technical names or similar sounding names that are difficult to remember (e.g. lug wrench vs. socket wrench vs. allen wrench vs box wrench etc.)
 * Many tools require a knowledge of the associated accessories/hardware that go along with the tool (e.g. what type of blades are compatible with a certain power saw)
 * A casual "DIYer" might not remember the names of all of their tools, making it difficult to order associated hardware and to know what each tool is for
 * This app could eventually serve to help someone identify what a tool is, what the tool does, and potentially the app could generate revenue by directing the user to order replacement parts/hardware for the tool online
@@ -37,11 +37,21 @@
 * Tested the performance of two models; one with a pretrained base (MobileNetV2) and one with a custom base and head
   
   <p align="center">
-  <img src="readme_images/confusionMatrix.png" width="400" >
+  <img src="readme_images/Training_validation_curves.png" width="400" >
+  <br>
+  <em>Training/validation performance for CNN model with pretrained MobileNetV2 base </em>
+  </br>
   </p>
 ## Model Performance
 
 The model with the pretrained MobileNetV2 base achieved an accuracy of 95%
+
+  <p align="center">
+  <img src="readme_images/confusionMatrix.png" width="400" >
+  <br>
+  <em>Confusion matrix for the CNN model with pretrained MobileNetV2 base applied to a batch of 32 test images </em>
+  </br>
+  </p>
 
 ## Model Productionalization
 
