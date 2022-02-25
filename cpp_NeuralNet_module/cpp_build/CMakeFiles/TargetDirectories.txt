@@ -1,0 +1,3 @@
+C:/Users/dakot/Desktop/DataScience/projects/dakota_portfolio/cpp_NeuralNet_module/cpp_build/CMakeFiles/FFNN_pymodule.dir
+C:/Users/dakot/Desktop/DataScience/projects/dakota_portfolio/cpp_NeuralNet_module/cpp_build/CMakeFiles/ALL_BUILD.dir
+C:/Users/dakot/Desktop/DataScience/projects/dakota_portfolio/cpp_NeuralNet_module/cpp_build/CMakeFiles/ZERO_CHECK.dir

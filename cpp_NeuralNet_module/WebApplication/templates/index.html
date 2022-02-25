@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Charachter Classifier</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+    
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body style="background-color: 	SlateBlue;color:white">
+
+    <div class="imagebanner">
+    </div>
+
+    <div class="text-center">
+        
+        
+
+
+        <h1 class="banner"> Handwritten Character Classifier </h1>
+
+        <h3 class="banner2"> (built using Dakota's custom FF neural net module written in c++) </h3>
+    
+
+        
+        <br> 
+        
+        </br> 
+        
+        <h2 class="labelbanner"> Draw a number below: </h2>
+        
+        <p class="pImage" id="output"></p>
+        
+        <h1 id="prediction" class="text-center prediction-element"></h1>
+        
+        <h2 id="probability" class="text-center probability-element"></h2>
+        
+        <h3 id="suggestion" class="text-center suggestion-element"></h3>
+        
+       <br>   
+        <canvas id="canvas" width="200" height="200"></canvas>
+        <br>
+        <input type="button" class="btn btn-secondary" style="font-size:10px; background:Black;" value="draw" onclick="use_tool('draw');" />
+
+        <input type="button" class="btn btn-secondary" style="font-size:10px; background:Black;" value="erase" onclick="use_tool('erase');" />
+        </br>
+        
+        <br>
+        <div id="output"></div>
+        </br>           
+        
+        <br>
+        <button id="button" type="button" class="btn btn-secondary"
+            style="font-size:20px; background:DodgerBlue;">Submit</button>  
+        </br>
+     
+    </div>
+
+</body>
+
+<script src="../static/js/script.js"></script>
+
+
+</html>

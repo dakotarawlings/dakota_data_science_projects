@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\dakot\Desktop\DataScience\projects\dakota_portfolio\cpp_NeuralNet_module\FFNN_module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\dakot\Desktop\DataScience\projects\dakota_portfolio\cpp_NeuralNet_module\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{D5F2D11D-25A9-3709-93CC-4325C995FFD7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
