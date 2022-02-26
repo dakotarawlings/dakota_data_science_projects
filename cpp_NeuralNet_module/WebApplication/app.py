@@ -13,38 +13,54 @@ model on an image file sent via a POST request and returns a class prediction
 #import flask tools
 from flask import Flask, jsonify, render_template, request
 
+
 #Import image an file processing tools
-from PIL import Image
+from PIL import Image, ImageOps
 import io
 import numpy as np
-
-#import model loading tools
-import tensorflow as tf
-from tensorflow.keras.models import model_from_json
+import pickle
 
 #Call flask constructor
 app=Flask(__name__)
 
-#create matrix of clas names to interpret model output
-class_names=['allen_key', 'circular_saw', 'drill', 'hacksaw', 'hammer', 'hand_saw', 'lug_wrench', 'pliers', 'screw_driver', 'wrench']
+#defin a function that loads the saved tensorflow model
+def load_model():
+    #Load the model structure from model json file
+    
+    loaded_model=pickle.load(open('model/model_file.p','rb'))
+
+    return loaded_model
+
+def format_image(image_data):
+    img=Image.open(io.BytesIO(image_data))
+    bw_img=img.convert(mode='L')
+    inv_img = ImageOps.invert(bw_img)
+    
+    bbox = inv_img.getbbox()
+    crop=inv_img.crop(bbox)
+    new_size=max(abs(bbox[2]-bbox[0]),abs(bbox[3]-bbox[1]))
+    delta_w=new_size-crop.size[0]
+    delta_h = new_size - crop.size[1]
+    padding = (delta_w//2, delta_h//2, delta_w-(delta_w//2), delta_h-(delta_h//2))
+    new_im = ImageOps.expand(crop, padding)
+    newsize = (28, 28)
+    im28 = new_im.resize(newsize)
+    im28 = ImageOps.expand(im28, (5,5,5,4))
+    newsize = (28, 28)
+    im28 = im28.resize(newsize)
+    
+    array=np.array(im28)
+    array1D=array.reshape(1,-1)
+    array1D=array1D.astype('float32')
+    array1D/=255
+    return np.array(array1D[0])
+    #return list(np.array(array1D[0]))
 
 #Define flask endpoint for the main html page
 @app.route('/')
 def index():
+    
     return render_template('index.html')
-
-#defin a function that loads the saved tensorflow model
-def load_model():
-    #Load the model structure from model json file
-    json_file=open('model/model.json','r')
-    loaded_model_json=json_file.read()
-    json_file.close()
-    loaded_model=model_from_json(loaded_model_json)
-    #load model weights from h5 file
-    loaded_model.load_weights("model/model.h5")
-    #compile model
-    loaded_model.compile(loss='categorical_crossentropy', optimizer='adam',metrics=['accuracy'] )
-    return loaded_model
 
 
 #define an API endpoint that takes in an image file from a post reqest and returns
@@ -55,52 +71,43 @@ def predict():
     #monitor the success of the API through a success attribute
     response={'success': False}
     
+    print("predict called")
+    
     #Check for a post request    
     if request.method=='POST':
+        print("POST called")
         
         #Check for a media attribute in the json input
         if request.files.get('media'):
             
+            print('media found')
+            
             #retrieve the file sent by the post request
             img_requested=request.files['media'].read()
+            formatted_img=format_image(img_requested)
             
-            #open the image file
-            img=Image.open(io.BytesIO(img_requested))
+            model=load_model()
             
-            #check to make sure the image is in 'RGB format
-            if img.mode!='RGB':
-                img=img.convert('RGB')
+            #print("image array")
+            #print(formatted_img)
+            prediction=np.array(model.predict(formatted_img))
             
-            #resize the image to the format used to train the model
-            img=img.resize((160,160))
+            #print("raw output")
+            #print(prediction)
             
-            #convert the image to tensor    
-            img=tf.keras.utils.img_to_array(img)
-            img=tf.expand_dims(img, 0)
-           
-            #call our load_model fnction
-            loaded_model=load_model()
+            prediction=str(prediction.argmax())
             
-            #call our model with the image
-            predictions=loaded_model.predict(img)
+            #print(prediction)
             
-            #transfrom the model output to a class name
-            #we call the softmax function since the model returns logits
-            score=tf.nn.softmax(predictions[0])
             response['predictions']=[]
-            classname=str(class_names[np.argmax(score)])
             
-            #retrieve the prediction accuracy from the model output
-            accuracy=float(100*np.max(score))
             
-            #create a JSON object with the relavent model outputs
-            pred={'label':classname, 'probability':accuracy}
+            pred={'label':prediction}
             response['predictions'].append(pred)
-
-            #set our success attribute to true ince we have successfully run our model
+            
             response['success']=True
-
-            #return our resonse JSON
+            
+            
     return jsonify(response)
    
 if __name__=='__main__':

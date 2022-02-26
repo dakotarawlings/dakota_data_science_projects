@@ -10,7 +10,10 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 
-import FFNN_pymodule
+try:
+    import FFNN_pymodule
+except:
+    pass
 
 import time
 
@@ -55,7 +58,7 @@ ytrain_formatted=ytrain_dummies.values
 seconds1 = time.time()
 
 model=FFNN_pymodule.FFNN_Builder()
-model.setTopology([784, 32, 10],'sigmoid')
+model.setTopology([784, 16, 10],'sigmoid')
 
 model.fitModel(xtrain_formatted, ytrain_formatted,1)
 
@@ -75,10 +78,21 @@ testImage/=255
 
 print('test image:', catTest)
 print(np.array(model.predict(testImage)).argmax())
+testImage.reshape(28,28)
+
+testImage.reshape(1,-1)
+
+print('after transformation')
+print(np.array(model.predict(testImage)).argmax())
+
+
+
+
+
 
 '''
-
 '''
+
 
 
 
@@ -110,8 +124,7 @@ print(np.array(model2.predict(testImage)).argmax())
 seconds2 = time.time()
 print("Pickle time:", (seconds2-seconds1)/60)
 
-
-
-
 '''
+
+
 '''

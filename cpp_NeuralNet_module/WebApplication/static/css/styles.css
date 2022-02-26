@@ -30,6 +30,15 @@ canvas {
 
 }
 
+.sublabelbanner {
+
+    color:white; 
+    margin-top: 10px; 
+    margin-bottom: 0px; 
+    font-family: "Montserrat", sans-serif;"    
+
+}
+
 /* formatting for the main title heading on the webpage*/
 .banner {
     color:white; 
