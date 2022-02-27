@@ -42,6 +42,10 @@ function onSubmit() {
     
     //create a temporary URL witht the file 
     URLImage = URL.createObjectURL(selectedFile,{type: 'text/plain'});
+    console.log('this is the img url:')
+    console.log(URLImage)
+
+
 
     //Define a form containing the image file to be sent to the flask API
     const formData = new FormData()
