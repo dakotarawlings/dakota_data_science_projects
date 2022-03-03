@@ -65,4 +65,37 @@ model.predict([1, 0])
 >>>[1]
 ```
 
-## Testing/demostrating the Library -> MNIST data model
+## Testing/demostrating the Library -> MNIST data model and webapp
+* ## Training data preparation:
+  - Used the MNIST handrwitten digit database consisting of of ~40,000 handwritten digits w/ a target number and a flattened 28X28 b+w pixel (target) array with values [0,255]
+  - converted pixel values to floats and rescaled pixel values to [0,1]
+  - One Hot Encode the target class to an array of 10 features (integer representation of the class)
+  - split the data into train and test sets (20% test) with the handwritten number as the target variable
+* ## Model building / evaluation:
+
+<p float ="left" align="center">
+  <img style="padding-right: 100px;" src="/cpp_FFNN_module/readme_pictures/confusionmatrix.png" height="300" >
+</p>
+
+  - Used the FFNN_pymodule to build and train a feed forward neural network:
+    - 784 input nerons
+    - 1 hidden layer with 32 neurons
+    - 10 output layers
+    - sigmoid activation
+  - trained the model with the training data using 2 epochs
+  - Applied the model to the testing data, achieving a 87% accuracy
+
+* ## Web Application:
+  - Used flask to build an API that revieves a handrawn image, processes the image for input into the model, and implements the model to predict the class (digit)
+  - Image processing function:
+    - Implement pillow to automatically invert the image and crop out blank space
+    - Add padding pixels to the image to automatically center the handwritten digit and square the image
+    - reshape the image to 28x28 pixels as in the MNIST database
+    - Flatten the image to a 1D array
+    - renormalize the image so that each pixel value is [0,1]
+  - Wrote a custom user interface in HTML, JavaScript, and css to allow the user to draw a number in an HTML canvas and submit the image. This then sends the image to the API endpoint fro the model which process the image, passes it into the model, and returns a predicted digit which then gets displaye on the HTML page
+  
+  
+  
+  
+  
