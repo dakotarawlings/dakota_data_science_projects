@@ -22,7 +22,7 @@
 
 **Languages:** C++, python, JavaScript, HTML, CSS
 
-## C++ Library/DLL documentation
+## C++ DLL/module documentation
 * ## General syntax:
   - ### ***model=FFNN_pymodeule.FFNN_Builder()*** --> Create an instance of a FF neural net
     - **Member variables:**
@@ -57,7 +57,7 @@ import FFNN_pymodule
 model = FFNN_pymodule.FFNN_Builder()
 model.setTopology([2, 4, 1])
 model.setActivationFunction('sigmoid')
-model.setEpochs(20)
+model.setEpochs(2000)
 x_train=[[1,1],[1,0],[0,1],[0,0]]
 y_train=[[0],[1],[1],[0]]
 model.fitModel(x_train, y_train)
@@ -66,18 +66,26 @@ model.predict([1, 0])
 ```
 
 ## Testing/demostrating the Library -> MNIST data model and webapp
+
+<p float ="left" align="center">
+  <img style="padding-right: 100px;" src="/cpp_FFNN_module/readme_pictures/homepage1.png" height="300" >
+</p>
+
 * ## Training data preparation:
-  - Used the MNIST handrwitten digit database consisting of of ~40,000 handwritten digits w/ a target number and a flattened 28X28 b+w pixel (target) array with values [0,255]
+  - Used the MNIST handrwitten digit database consisting of of ~40,000 handwritten digits w/ a target number and a flattened 28X28 b+w pixel (feature) array with values [0,255]
   - converted pixel values to floats and rescaled pixel values to [0,1]
   - One Hot Encode the target class to an array of 10 features (integer representation of the class)
   - split the data into train and test sets (20% test) with the handwritten number as the target variable
 * ## Model building / evaluation:
 
 <p float ="left" align="center">
-  <img style="padding-right: 100px;" src="/cpp_FFNN_module/readme_pictures/confusionmatrix.png" height="300" >
+  <img style="padding-right: 100px;" src="/cpp_FFNN_module/readme_pictures/heatmap2.png" height="300" >
+   <br>
+  <em>Confusion matrix for the model applied to ~8,000 testing images. Accuracy: 87% </em>
+  </br>
 </p>
 
-  - Used the FFNN_pymodule to build and train a feed forward neural network:
+  - Used my custom FFNN_pymodule to build and train a feed forward neural network:
     - 784 input nerons
     - 1 hidden layer with 32 neurons
     - 10 output layers
@@ -86,14 +94,24 @@ model.predict([1, 0])
   - Applied the model to the testing data, achieving a 87% accuracy
 
 * ## Web Application:
-  - Used flask to build an API that revieves a handrawn image, processes the image for input into the model, and implements the model to predict the class (digit)
+  - Used flask to build an API that recieves a handrawn image, processes the image for input into the model, and implements the model to predict the class (digit)
   - Image processing function:
+ 
+  <p float ="left" align="center">
+  <img style="padding-right: 100px;" src="/cpp_FFNN_module/readme_pictures/TestCharachter.jfif" height="300" >
+  <img style="padding-right: 100px;" src="/cpp_FFNN_module/readme_pictures/ProcessedFigure.png" height="300" >
+  <br>
+  <em>Left: Raw image recieved from HTML. Right: Processed image following automated image processing in the flask app </em>
+  </br>
+  </p>
+  
+  - 
     - Implement pillow to automatically invert the image and crop out blank space
     - Add padding pixels to the image to automatically center the handwritten digit and square the image
     - reshape the image to 28x28 pixels as in the MNIST database
     - Flatten the image to a 1D array
     - renormalize the image so that each pixel value is [0,1]
-  - Wrote a custom user interface in HTML, JavaScript, and css to allow the user to draw a number in an HTML canvas and submit the image. This then sends the image to the API endpoint fro the model which process the image, passes it into the model, and returns a predicted digit which then gets displaye on the HTML page
+  - Wrote a user interface from scratch in HTML, JavaScript, and css to allow the user to draw a number in an HTML canvas and submit the image. This then sends the image to the API endpoint for the model which processes the image, passes it into the model, and returns a predicted digit which then gets displaye on the HTML page
   
   
   
