@@ -5,14 +5,14 @@
   <img style="padding-right: 100px;" src="/cpp_FFNN_module/readme_pictures/video.gif" height="300" >
 </p>
 
-### Web App Link: https://char-recognition-cpp.herokuapp.com/
+### Web App Link: https://number-recognition-app.herokuapp.com/
 
 ## Overview
 * Wrote a feed forward neural network model-building library from scratch in C++ using only standard libraries
 * Used pibind11 to build a wrapper for the C++ library to create a python DLL 
 * Tested the library by using it to build a model to classify images of handwritten digits (trained using the MNIST dataset)
 * Used the model to build a digit identifier webapp from scratch in python, flask, javascript, html, and css
-* Deployed web app on Heroku: https://char-recognition-cpp.herokuapp.com/
+* Deployed web app on Heroku: https://number-recognition-app.herokuapp.com/
 * All development for this project was completed on a linux kernal via WSL2 
 
 ## Resources
